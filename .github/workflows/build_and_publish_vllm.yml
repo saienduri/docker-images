@@ -24,9 +24,9 @@ jobs:
         with:
           repository: saienduri/docker-images
           path: images
-      - name: "Move docker image"
-        run: |
-          mv ../images/vllm.Dockerfile .
+      # - name: "Move docker image"
+      #   run: |
+      #     mv ../images/vllm.Dockerfile .
         working-directory: ./vllm
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
