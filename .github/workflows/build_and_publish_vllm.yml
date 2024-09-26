@@ -1,4 +1,4 @@
-name: Publish ghascale image
+name: Publish vllm image
 on:
   workflow_dispatch:
 
