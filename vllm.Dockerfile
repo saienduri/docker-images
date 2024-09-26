@@ -4,7 +4,7 @@ ARG BASE_IMAGE="rocm/pytorch:rocm6.2_ubuntu20.04_py3.9_pytorch_release_2.3.0"
 ARG COMMON_WORKDIR=/app
 
 # The following ARGs should be "0" or "1". If "1", the respective component will be built and installed on top of the base image
-ARG BUILD_HIPBLASLT="0"
+ARG BUILD_HIPBLASLT="1"
 ARG BUILD_RCCL="1"
 ARG BUILD_FA="1"
 ARG BUILD_TRITON="1"
