@@ -17,7 +17,7 @@ jobs:
       - name: Checkout VLLM repo
         uses: actions/checkout@v3
         with:
-          repository: nod-ai/SHARK-TestSuite
+          repository: ROCm/vllm
           path: vllm
       - name: Checkout repository
         uses: actions/checkout@v3
