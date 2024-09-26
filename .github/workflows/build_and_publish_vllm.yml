@@ -50,3 +50,6 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: "Remove docker image"
+        run: |
+          sudo rm -rf /var/lib/docker/overlay2
