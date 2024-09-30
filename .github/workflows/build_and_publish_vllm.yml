@@ -14,6 +14,8 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: "Restart docker"
+        run: sudo systemctl restart docker
       - name: Checkout VLLM repo
         uses: actions/checkout@v3
         with:
@@ -24,10 +26,6 @@ jobs:
         with:
           repository: saienduri/docker-images
           path: images
-      # - name: "Move docker image"
-      #   run: |
-      #     mv ../images/vllm.Dockerfile .
-        # working-directory: ./vllm
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
