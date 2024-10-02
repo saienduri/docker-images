@@ -12,7 +12,7 @@ ARG BUILD_PYTORCH="1"
 # This ARG should also be "0" or "1". If "1", the vLLM development directory is obtained via git clone.
 # If "0", it is copied in from the local working directory.
 ARG REMOTE_VLLM="0"
-ARG USE_CYTHON="0"
+ARG USE_CYTHON="1"
 
 # -----------------------
 # vLLM base image
