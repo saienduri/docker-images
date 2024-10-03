@@ -169,13 +169,14 @@ if ls /install/*.whl; then \
     pip install /install/*.whl; \
 fi
 # Build vLLM
-RUN python3 -m pip install setuptools-scm>=8
 RUN cd vllm \
+    && python3 -m pip install setuptools-scm>=8 \
     && python3 setup.py clean --all  \
     && if [ ${USE_CYTHON} -eq "1" ]; then python3 setup_cython.py build_ext --inplace; fi \
     && python3 setup.py bdist_wheel --dist-dir=dist
 # Build gradlib
 RUN cd vllm/gradlib \
+    && python3 -m pip install setuptools-scm>=8 \
     && python3 setup.py clean --all && python3 setup.py bdist_wheel --dist-dir=dist
 FROM scratch AS export_vllm
 ARG COMMON_WORKDIR
