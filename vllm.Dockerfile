@@ -169,6 +169,7 @@ if ls /install/*.whl; then \
     pip install /install/*.whl; \
 fi
 # Build vLLM
+RUN python3 -m pip install setuptools-scm>=8
 RUN cd vllm \
     && python3 setup.py clean --all  \
     && if [ ${USE_CYTHON} -eq "1" ]; then python3 setup_cython.py build_ext --inplace; fi \
