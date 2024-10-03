@@ -19,8 +19,8 @@ jobs:
       - name: "Set Date"
         run: |
           echo "DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
-      - name: "Restart docker"
-        run: sudo systemctl restart docker
+      # - name: "Restart docker"
+      #   run: sudo systemctl restart docker
       - name: Checkout VLLM repo
         uses: actions/checkout@v3
         with:
