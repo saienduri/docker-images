@@ -16,7 +16,7 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: "Remove docker image"
+      - name: "Set Date"
         run: |
           echo "DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
       - name: "Restart docker"
