@@ -54,7 +54,7 @@ jobs:
           context: vllm
           file: images/vllm.Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }},saienduri/vllm:${{ env.DATE }}
+          tags: ${{ steps.meta.outputs.tags }},ghcr.io/saienduri/vllm:${{ env.DATE }}
           labels: ${{ steps.meta.outputs.labels }}
       - name: "Remove docker image"
         run: |
