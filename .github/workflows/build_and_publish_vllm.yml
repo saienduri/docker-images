@@ -16,6 +16,9 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: "Remove docker image"
+        run: |
+          echo "DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
       # - name: "Restart docker"
       #   run: sudo systemctl restart docker
       # - name: Checkout VLLM repo
@@ -48,11 +51,8 @@ jobs:
       #     context: vllm
       #     file: vllm.Dockerfile
       #     push: true
-      #     tags: ${{ steps.meta.outputs.tags }}
+      #     tags: saienduri/vllm:nightly
       #     labels: ${{ steps.meta.outputs.labels }}
-      - name: "Remove docker image"
-        run: |
-          echo "DATE=$(date +%Y-%m-%d)" >> $GITHUB_ENV
       - name: "Remove docker image"
         run: |
           echo $DATE
