@@ -26,6 +26,7 @@ jobs:
         with:
           repository: ROCm/vllm
           path: vllm
+          fetch-depth: 0
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
