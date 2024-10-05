@@ -55,8 +55,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }},ghcr.io/saienduri/vllm:${{ env.DATE }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            BUILD_HIPBLASLT="1"
-            USE_CYTHON="1"
+            BUILD_HIPBLASLT=1
+            USE_CYTHON=1
       - name: "Remove docker image"
         run: |
           sudo rm -rf /var/lib/docker
