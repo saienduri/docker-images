@@ -51,7 +51,7 @@ jobs:
           context: vllm
           file: vllm/Dockerfile.rocm
           push: true
-          tags: ${{ steps.meta.outputs.tags }},rocm/vllm-dev::${{ env.DATE }}
+          tags: ${{ steps.meta.outputs.tags }},rocm/vllm-dev:${{ env.DATE }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             BUILD_HIPBLASLT=1
