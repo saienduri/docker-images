@@ -5,8 +5,7 @@ on:
     - cron: '30 5 * * *'
 
 env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: saienduri/vllm
+  IMAGE_NAME: rocm/vllm-dev
 
 jobs:
   build-and-push-image:
@@ -32,12 +31,12 @@ jobs:
         with:
           repository: saienduri/docker-images
           path: images
-      - name: Log in to the Container registry
-        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.PUBLISH_TOKEN }}
+      # - name: Log in to the Container registry
+      #   uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+      #   with:
+      #     registry: ${{ env.REGISTRY }}
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.PUBLISH_TOKEN }}
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
@@ -52,7 +51,7 @@ jobs:
           context: vllm
           file: vllm/Dockerfile.rocm
           push: true
-          tags: ${{ steps.meta.outputs.tags }},ghcr.io/saienduri/vllm:${{ env.DATE }}
+          tags: ${{ steps.meta.outputs.tags }},rocm/vllm-dev::${{ env.DATE }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             BUILD_HIPBLASLT=1
