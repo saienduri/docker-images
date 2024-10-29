@@ -21,8 +21,8 @@ RUN sudo apt-get update -y \
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
     sudo apt-get install git-lfs
 
-RUN groupadd -g 109 render
-RUN groupadd -g 44 video
+RUN sudo groupadd -g 109 render
+RUN sudo groupadd -g 44 video
 
 RUN sudo apt update -y \
     && sudo apt install -y "linux-headers-$(uname -r)" "linux-modules-extra-$(uname -r)" \
