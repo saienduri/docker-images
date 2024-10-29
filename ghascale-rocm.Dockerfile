@@ -23,7 +23,7 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
 
 RUN sudo apt update -y \
     && sudo apt install -y "linux-headers-$(uname -r)" "linux-modules-extra-$(uname -r)" \
-    && sudo usermod -a -G render,video $LOGNAME \
+    && sudo usermod -a -G render,video runner \
     && wget https://repo.radeon.com/amdgpu-install/6.2.2/ubuntu/jammy/amdgpu-install_6.2.60202-1_all.deb \
     && sudo apt install -y ./amdgpu-install_6.2.60202-1_all.deb \
     && sudo apt update -y \
