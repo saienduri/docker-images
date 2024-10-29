@@ -30,4 +30,4 @@ RUN sudo apt update -y \
     && wget https://repo.radeon.com/amdgpu-install/6.2.2/ubuntu/jammy/amdgpu-install_6.2.60202-1_all.deb \
     && sudo apt install -y ./amdgpu-install_6.2.60202-1_all.deb \
     && sudo apt update -y \
-    && sudo apt install -y rocm
+    && sudo apt install -y rocm-dev
