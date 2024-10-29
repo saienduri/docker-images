@@ -4,7 +4,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: saienduri/ghascale-rocm
+  IMAGE_NAME: saienduri/ghascale-rocm-dev
 
 jobs:
   build-and-push-image:
