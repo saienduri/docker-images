@@ -1,4 +1,4 @@
-name: Publish ghascale image
+name: Publish ghascale rocm image
 on:
   workflow_dispatch:
 
