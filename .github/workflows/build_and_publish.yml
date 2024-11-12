@@ -1,6 +1,8 @@
 name: Publish ghascale image
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '30 5 * * *'
 
 env:
   REGISTRY: ghcr.io
