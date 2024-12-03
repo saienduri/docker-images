@@ -23,7 +23,7 @@ jobs:
       - name: Checkout VLLM repo
         uses: actions/checkout@v3
         with:
-          repository: ROCm/vllm
+          repository: saienduri/vllm
           ref: develop
           path: vllm
           fetch-depth: 0
