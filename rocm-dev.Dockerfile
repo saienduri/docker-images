@@ -18,6 +18,7 @@ RUN sudo apt-get update -y \
     lld \
     wget \
     psmisc \
+    speedtest-cli \
     && sudo rm -rf /var/lib/apt/lists/* \
     && pip install kubernetes
 
