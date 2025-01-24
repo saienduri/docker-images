@@ -14,6 +14,11 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: "Remove docker image"
+        run: |
+          sudo rm -rf /var/lib/docker
+      - name: "Restart docker"
+        run: sudo systemctl restart docker
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Log in to the Container registry
