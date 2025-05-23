@@ -27,9 +27,9 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
 RUN sudo groupadd -g 109 render
 
 RUN sudo apt update -y \
-    && sudo apt install python3-setuptools python3-wheel libpython3.10 \
+    && sudo apt install -y python3-setuptools python3-wheel libpython3.10 \
     && sudo usermod -a -G render,video runner \
     && wget https://repo.radeon.com/amdgpu-install/6.4.1/ubuntu/noble/amdgpu-install_6.4.60401-1_all.deb \
-    && sudo apt install ./amdgpu-install_6.4.60401-1_all.deb \
+    && sudo apt install -y ./amdgpu-install_6.4.60401-1_all.deb \
     && sudo apt update -y \
     && sudo apt install -y rocm-dev
