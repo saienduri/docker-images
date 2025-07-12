@@ -27,9 +27,9 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
 RUN sudo groupadd -g 109 render
 
 RUN sudo apt update -y \
-    && sudo apt install -y "linux-headers-$(uname -r)" "linux-modules-extra-$(uname -r)" \
+    && sudo apt install -y python3-setuptools python3-wheel libpython3.10 \
     && sudo usermod -a -G render,video runner \
-    && wget https://repo.radeon.com/amdgpu-install/6.2.2/ubuntu/jammy/amdgpu-install_6.2.60202-1_all.deb \
-    && sudo apt install -y ./amdgpu-install_6.2.60202-1_all.deb \
+    && wget https://repo.radeon.com/amdgpu-install/6.4.1/ubuntu/jammy/amdgpu-install_6.4.60401-1_all.deb \
+    && sudo apt install -y ./amdgpu-install_6.4.60401-1_all.deb \
     && sudo apt update -y \
     && sudo apt install -y rocm-dev
